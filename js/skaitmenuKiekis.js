@@ -19,8 +19,8 @@ if (typeof string !== 'string') {
     else {
         let picked = '';
         for (i = 0; i < string.length; i+=n) {
-
-        picked += string[i + n-1];
+        
+        if (string.length - i >= n) {picked += string[i + n-1]};
         
         }
     console.log(`Kas ${n}a raidė iš stringo ${string} yra ${picked}`)
@@ -28,7 +28,7 @@ if (typeof string !== 'string') {
 }
 
 
-isrinktiRaides('abcdefg', 2);
+isrinktiRaides('abcdefghijkl', 4);
 
 
 // 5.	Funkcija pavadinimu “isrinktiRaides”:
