@@ -17,18 +17,18 @@ if (typeof string !== 'string') {
         console.log('Antras kintamasis negali būti didesnis už pirmojo ilgį')
     }
     else {
-        let picked;
-        for (i = 0; i < string.length; i+n) {
+        let picked = '';
+        for (i = 0; i < string.length; i+=n) {
 
-        picked += string[i + n];
+        picked += string[i + n-1];
         
         }
-    console.log(picked)
+    console.log(`Kas ${n}a raidė iš stringo ${string} yra ${picked}`)
     }
 }
 
 
-isrinktiRaides('abcdefgh', 2);
+isrinktiRaides('abcdefg', 2);
 
 
 // 5.	Funkcija pavadinimu “isrinktiRaides”:
