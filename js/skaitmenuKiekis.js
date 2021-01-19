@@ -1,13 +1,13 @@
 function isrinktiRaides(string,n) {
 
 if (typeof string !== 'string') {
-    console.log('Pirmasis kintamasis yra netinkamo tipo')
+    return 'Pirmasis kintamasis yra netinkamo tipo';
 }
     else if (string.length == 0 || string.length > 100) {
 
         console.log('Pirmojo kintamojo reikšmė yra netinkamo dydžio')
     }
-    else if (typeof n !== 'number') {
+    else if (typeof n !== 'number' || !isFinite(n)) {
         console.log('Padaryk antrąjį variable skaičių')
     }
     else if (n <= 0) {
@@ -28,7 +28,7 @@ if (typeof string !== 'string') {
 }
 
 
-isrinktiRaides('abcdefghijkl', 4);
+isrinktiRaides('abcdefghi', 1);
 
 
 // 5.	Funkcija pavadinimu “isrinktiRaides”:
@@ -77,20 +77,22 @@ isrinktiRaides('abcdefghijkl', 4);
 //     console.log('Arėjus tuštutukas')
     
 // } else {
-//     var largest = Math.max(...arr);
-//     // for (i = 0; i <= arr.length; i++) {
-//         if (arr[i] >= arr[i + 1]) {
-//             largest = arr[i];
-//         } else {
-//             largest = arr[i + 1];
+//     let largest = -Infinity;
+//     for (i = 0; i < arr.length; i++) {
+//     if typeof arr[i] !==number || !isFinite(arr[i])
+//     continue
+            
+
+// if (arr[i] > largest){
+//            largest = arr[i]
 //         }
 //     }
 //     console.log('Didziausias skaicius yra', largest)
 //     }
 
 
-// }
 
+// }
 
 
 // didziausiasSkaiciusSarase([-5, 78, 14, 0, 18]);
@@ -139,8 +141,23 @@ isrinktiRaides('abcdefghijkl', 4);
 //     if (typeof val !== 'number') {
 //         console.log('Pateikta netinkamo tipo reikšmė');
 //     }
+
+// if (!isFinite(val)) {
+//     return 'ERROR: turi būti tikras skaičius'
+// }
+
 //     let ilgis = val.toString();
+// // alternatively '' + val
+
+// //if ilgis < 0 = length--;
+// if (number % 1 !== 0) {
+//     length--;
+// }
+
+
 //     return console.log(ilgis.length);
+
+// 
 // }
 
 // skaitmenuKiekisSkaiciuje(365);
@@ -166,3 +183,7 @@ isrinktiRaides('abcdefghijkl', 4);
 // 1.	rezultatas: “Pateikta netinkamo tipo reikšmė.”
 // vi.	console.log( skaitmenuKiekisSkaiciuje( NaN ) );
 // 1.	rezultatas: “Pateikta netinkamo tipo reikšmė.”
+
+// if '' + var ==='Nan'
+// isFinite veikia panašiai lyg būtų isNumber, galima pričiupti NaNą
+// kaip išvengti minusinio nulio >> return a * b === 0 ? 0 : a*b 
